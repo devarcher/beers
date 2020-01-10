@@ -25,7 +25,7 @@ class BeerData extends Component {
       }
     ))
     this.setState({ beer: filteredBeerData, isLoading: false })
-    console.log('***STATE BEER***' , this.state.beer)
+    // console.log('***STATE BEER***' , this.state.beer)
   }
 
   
