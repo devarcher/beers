@@ -5,7 +5,12 @@ import { faBeer } from '@fortawesome/free-solid-svg-icons';
 
 class BeerCard extends React.Component {
   state = {
-    isLiked: false
+    isLiked: false,
+    favorites: []
+  }
+
+  iconClick = (id) => {
+    console.log("***Icon Click beer.id***", id)
   }
 
   render() {
@@ -21,9 +26,9 @@ class BeerCard extends React.Component {
             <h3 className="ibu">{beer.ibu}</h3>
             <p className="desc">{beer.description}</p>
           </div>
-          <icon>
-            <FontAwesomeIcon icon={faBeer}></FontAwesomeIcon>
-          </icon>
+          <>
+            <FontAwesomeIcon icon={faBeer} className="beerIcon" onClick={() => this.iconClick(beer.id)}></FontAwesomeIcon>
+          </>
         </div>
       ))}
     </div>
