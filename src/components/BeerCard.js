@@ -1,24 +1,20 @@
 import React from 'react';
 
-const BeerCard = ({ beers }) => {
-  return (
+
+class BeerCard extends React.Component {
+  state = {
+    isLiked: false
+  }
+
+  render() {
+  return ( 
     <div>
-      {beers.map((beer => 
-      <h5>{beer.name}</h5>
-      ))}
+      
     </div>
     )
+  }
 }
 
 export default BeerCard;
 
-  // beers.map(beer => ( 
-  //   {
-  //     id: beer.id,
-  //     name: beer.name,
-  //     tagline: beer.tagline,
-  //     description: beer.description,
-  //     abv: beer.abv,
-  //     ibu: beer.ibu
-  //   }
-  // ))
+{/* <h5>{this.props.beerInfo[1].name}</h5> */}

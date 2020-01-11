@@ -17,8 +17,20 @@ class App extends Component {
     const url = "https://api.punkapi.com/v2/beers";
     const response = await fetch(url);
     const data = await response.json();
-    this.setState({ beers: data, isLoading: false })
-    // console.log('***STATE BEER***' , this.state.beer)
+    console.log(data);
+    const filteredBeers = data.map(beer => ( 
+    {
+      id: beer.id,
+      name: beer.name,
+      tagline: beer.tagline,
+      description: beer.description,
+      abv: beer.abv,
+      ibu: beer.ibu,
+      image: beer.image_url
+    }
+  ))
+    this.setState({ beers: filteredBeers, isLoading: false })
+    console.log('***STATE BEER***' , this.state.beers)
   }
 
   render() {
@@ -29,7 +41,7 @@ class App extends Component {
       ) : ( 
       <div>
         <div>
-          <BeerCard beers={this.state.beers} />
+          <BeerCard beerInfo={this.state.beers} />
         </div>
       </div>
       )}
