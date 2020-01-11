@@ -17,7 +17,7 @@ class App extends Component {
     const url = "https://api.punkapi.com/v2/beers";
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     const filteredBeers = data.map(beer => ( 
     {
       id: beer.id,
@@ -30,7 +30,7 @@ class App extends Component {
     }
   ))
     this.setState({ beers: filteredBeers, isLoading: false })
-    console.log('***STATE BEER***' , this.state.beers)
+    // console.log('***STATE BEER***' , this.state.beers)
   }
 
   render() {
@@ -41,7 +41,7 @@ class App extends Component {
       ) : ( 
       <div>
         <div>
-          <BeerCard beerInfo={this.state.beers} />
+          <BeerCard beerData={this.state.beers}/>
         </div>
       </div>
       )}
