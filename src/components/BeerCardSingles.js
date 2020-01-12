@@ -26,10 +26,12 @@ iconClick(id) {
   
   render() {
     const { isLiked } = this.state
+    const { beerData } = this.props
+    console.log(beerData)
     // console.log('***Favorites State***', this.state.favorites)
     return ( 
-      <div>
-      {this.props.beerData.map((beer) => (
+      <div> 
+        {beerData.map((beer) => (
         <div className="card" key={beer.id}>
           <div className="card-body">
             <img src={beer.image} className="beerImage" alt=""/>

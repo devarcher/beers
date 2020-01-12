@@ -1,18 +1,20 @@
 import React from 'react';
-import BeerCards from './BeerCardSingles'
+import BeerCardSingles from './BeerCardSingles'
 
-class BeerCardGroup extends React.Component {
+const BeerCardGroup = (props) => {
   
-  beerData = this.props.beerData
+  const { beerData } = props
+  console.log(beerData);
 
-  render() {
     return (
       <div>
-        <BeerCards beerData={this.beerData} />
+        {beerData.map((beer) => (
+          <BeerCardSingles key={beer.id} beerData={ beer } />
+        ))}
       </div>
     )
   }
-}
+
 
 export default BeerCardGroup;
 
