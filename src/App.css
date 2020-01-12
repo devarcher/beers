@@ -1,3 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: grey;
+}
+
+.card {
+  border: 2px solid lightgrey;
+  width: 35vw;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.groupOne {
+  display: flex;
+  padding: 2rem;
+}
+
+.beerImage {
+  border: 1px solid rgb(150, 150, 223);
+  border-radius: 4px;
+  padding: 15px;
+  height: 350px;
+  max-width: 150px;
+}
+
+.textGroupOne {
+  margin-left: 2rem;
+}
+
+.title {
+  border-bottom: 2px solid black;
+}
+
 .beerIcon {
-  font-size: 4rem;
+  font-size: 2.75rem;
 }

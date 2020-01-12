@@ -13,28 +13,34 @@ class BeerCardSingles extends React.Component {
     this.setState({ isLiked: !this.state.isLiked })
     
     const { beerData } = this.props
-    if(this.state.isLiked === true) {
-      this.setState(prevState => ({
-        favorites: [...prevState.favorites, beerData]
-      }))
-    }
+    console.log(beerData)
+    // if(this.state.isLiked === true) {
+    //   this.setState(prevState => ({
+    //     favorites: [...prevState.favorites, beerData]
+    //   }))
+    // }
   }
   
   render() {
     const { isLiked } = this.state
     const { beerData } = this.props
     // console.log(beerData)
-    console.log('***Favorites State***', this.state.favorites)
+    // console.log('***Favorites State***', this.state.favorites)
     return ( 
       <div> 
-        <div className="card" key={beerData.id}>
+        <div className="card">
           <div className="card-body">
-            <img src={beerData.image} className="beerImage" alt=""/>
-            <h1 className="title">{beerData.name}</h1>
-            <h2 className="tagline">{beerData.tagline}</h2>
+            <div className="groupOne">
+              <img src={beerData.image}  className="beerImage" alt=""/>
+              <div className="textGroupOne">
+                <h1 className="title">{beerData.name}</h1>
+                <h2 className="tagline">{beerData.tagline}</h2>
+              </div>
+            </div>
             <h3 className="abv">{beerData.abv}</h3>
             <h3 className="ibu">{beerData.ibu}</h3>
             <p className="desc">{beerData.description}</p>
+            <span>Add To Favorites</span>
            <FontAwesomeIcon 
             icon={isLiked ? faHeart : faBeer }
             className = 'beerIcon'
@@ -42,7 +48,6 @@ class BeerCardSingles extends React.Component {
             size='3x'
             onClick={() => this.iconClick(beerData.id)}
            ></FontAwesomeIcon>
-           <span>Add To Favorites</span>
           </div>
         </div>
       </div>
