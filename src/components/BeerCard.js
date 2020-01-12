@@ -21,10 +21,9 @@ class BeerCard extends React.Component {
       }
     }))
   }
-
   
   render() {
-    const { isLiked, favorite } = this.state;
+    const { isLiked } = this.state;
     console.log('***Favorites State***', this.state.favorites)
     return ( 
       <div>
@@ -44,7 +43,6 @@ class BeerCard extends React.Component {
             className = 'beerIcon'
             color={isLiked ? '#F44336' : 'rgb(50, 50, 50)'}
             size='3x'
-            style={{ marginBottom: 10, marginTop: 20 }}
             onClick={() => this.setState({ isLiked: !isLiked })}
            ></FontAwesomeIcon>
            <span>Add To Favorites</span>

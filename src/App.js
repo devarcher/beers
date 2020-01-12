@@ -6,7 +6,8 @@ import './App.css';
 class App extends Component {
   state = {
     isLoading: true,
-    beers: null
+    beers: null,
+    isLiked: null
   }
   
   componentDidMount() {
@@ -41,7 +42,7 @@ class App extends Component {
       ) : ( 
       <div>
         <div>
-          <BeerCard beerData={this.state.beers}/>
+          <BeerCard beerData={this.state.beers} liked={this.state.isLiked}/>
         </div>
       </div>
       )}
