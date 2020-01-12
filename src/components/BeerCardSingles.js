@@ -31,27 +31,25 @@ iconClick(id) {
     // console.log('***Favorites State***', this.state.favorites)
     return ( 
       <div> 
-        {beerData.map((beer) => (
-        <div className="card" key={beer.id}>
+        <div className="card" key={beerData.id}>
           <div className="card-body">
-            <img src={beer.image} className="beerImage" alt=""/>
-            <h1 className="title">{beer.name}</h1>
-            <h2 className="tagline">{beer.tagline}</h2>
-            <h3 className="abv">{beer.abv}</h3>
-            <h3 className="ibu">{beer.ibu}</h3>
-            <p className="desc">{beer.description}</p>
+            <img src={beerData.image} className="beerImage" alt=""/>
+            <h1 className="title">{beerData.name}</h1>
+            <h2 className="tagline">{beerData.tagline}</h2>
+            <h3 className="abv">{beerData.abv}</h3>
+            <h3 className="ibu">{beerData.ibu}</h3>
+            <p className="desc">{beerData.description}</p>
            <FontAwesomeIcon 
             icon={isLiked ? faHeart : faBeer }
             className = 'beerIcon'
             color={isLiked ? '#F44336' : 'rgb(50, 50, 50)'}
             size='3x'
-            onClick={() => this.iconClick(beer.id)}
+            onClick={() => this.iconClick(beerData.id)}
            ></FontAwesomeIcon>
            <span>Add To Favorites</span>
           </div>
         </div>
-      ))}
-    </div>
+      </div>
     )
   }
 }
