@@ -11,8 +11,8 @@ class BeerCardSingles extends React.Component {
   iconClick(id) {
     this.setState({ isLiked: !this.state.isLiked });
 
-    const { beerData } = this.props;
-    console.log(beerData);
+    // const { beerData } = this.props;
+    // console.log(beerData);
     // if(this.state.isLiked === true) {
     //   this.setState(prevState => ({
     //     favorites: [...prevState.favorites, beerData]
@@ -49,7 +49,7 @@ class BeerCardSingles extends React.Component {
                 <FontAwesomeIcon
                 icon={isLiked ? faHeart : faBeer}
                 className="beerIcon"
-                color={isLiked ? "rgb(236, 73, 141)" : "rgb(50, 50, 50)"}
+                color={isLiked ? "#f0baba" : "#e4decd"}
                 size="3x"
                 ></FontAwesomeIcon>
               </span>
