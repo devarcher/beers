@@ -4,7 +4,7 @@ import BeerCardSingles from './BeerCardSingles'
 const BeerCardGroup = (props) => {
   
   const { beerData } = props
-  console.log(beerData);
+  // console.log('***Group beerData***', beerData);
 
     return (
       <div>

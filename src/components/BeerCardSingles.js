@@ -8,27 +8,23 @@ class BeerCardSingles extends React.Component {
     favorites: []
   }
 
-
-iconClick(id) {
-  this.setState({ isLiked: !this.state.isLiked })
-  
-  // const allBeers = this.props.beerData;
-    // allBeers.forEach((beer => {
-      // if(beer.id === id) {
-        // console.log('*forEach beer.id / id', beer, id)
-        
-        // this.setState(prevState => ({
-        //   favorites: [...prevState.favorites, beer]
-        // }))
-      // }
-    // }))
+  iconClick(id) {
+    
+    this.setState({ isLiked: !this.state.isLiked })
+    
+    const { beerData } = this.props
+    if(this.state.isLiked === true) {
+      this.setState(prevState => ({
+        favorites: [...prevState.favorites, beerData]
+      }))
+    }
   }
   
   render() {
     const { isLiked } = this.state
     const { beerData } = this.props
-    console.log(beerData)
-    // console.log('***Favorites State***', this.state.favorites)
+    // console.log(beerData)
+    console.log('***Favorites State***', this.state.favorites)
     return ( 
       <div> 
         <div className="card" key={beerData.id}>
