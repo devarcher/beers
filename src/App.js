@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BeerCard from './components/BeerCard'
+import BeerCardGroup from './components/BeerCardGroup'
 
 import './App.css';
 
@@ -7,7 +7,6 @@ class App extends Component {
   state = {
     isLoading: true,
     beers: null,
-    isLiked: null
   }
   
   componentDidMount() {
@@ -42,7 +41,7 @@ class App extends Component {
       ) : ( 
       <div>
         <div>
-          <BeerCard beerData={this.state.beers} liked={this.state.isLiked}/>
+          <BeerCardGroup beerData={this.state.beers}/>
         </div>
       </div>
       )}
