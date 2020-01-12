@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBeer } from '@fortawesome/free-solid-svg-icons';
+import { faBeer, faHeart} from '@fortawesome/free-solid-svg-icons';
 
 
 class BeerCard extends React.Component {
@@ -9,13 +9,25 @@ class BeerCard extends React.Component {
     favorites: []
   }
 
-  iconClick = (id) => {
-    console.log("***Icon Click beer.id***", id)
+  iconClick(id) {
+    const allBeers = this.props.beerData;
+    allBeers.forEach((beer => {
+      if(beer.id === id) {
+        // console.log('*forEach beer.id / id', beer, id)
+        
+        // this.setState(prevState => ({
+        //   favorites: [...prevState.favorites, beer]
+        // }))
+      }
+    }))
   }
 
+  
   render() {
-  return ( 
-    <div>
+    const { isLiked, favorite } = this.state;
+    console.log('***Favorites State***', this.state.favorites)
+    return ( 
+      <div>
       {this.props.beerData.map((beer) => (
         <div className="card" key={beer.id}>
           <div className="card-body">
@@ -27,7 +39,15 @@ class BeerCard extends React.Component {
             <p className="desc">{beer.description}</p>
           </div>
           <>
-            <FontAwesomeIcon icon={faBeer} className="beerIcon" onClick={() => this.iconClick(beer.id)}></FontAwesomeIcon>
+           <FontAwesomeIcon 
+            icon={isLiked ? faHeart : faBeer }
+            className = 'beerIcon'
+            color={isLiked ? '#F44336' : 'rgb(50, 50, 50)'}
+            size='3x'
+            style={{ marginBottom: 10, marginTop: 20 }}
+            onClick={() => this.setState({ isLiked: !isLiked })}
+           ></FontAwesomeIcon>
+           <span>Add To Favorites</span>
           </>
         </div>
       ))}
