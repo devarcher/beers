@@ -33,7 +33,7 @@ class BeerCardSingles extends React.Component {
               <img src={beerData.image} className="beerImage" alt="" />
               <div className="textGroupOne">
                 <h1 className="title">{beerData.name}</h1>
-                <h2>{beerData.tagline}</h2>
+                <h2 className="tagline">{beerData.tagline}</h2>
                 <div className="textGroupTwo">
                   <p>{beerData.description}</p>
                   <div className="abvAndIbu">
