@@ -35,21 +35,27 @@ class BeerCardSingles extends React.Component {
              <div          className="textGroupOne">
               <h1 className="title">{beerData.name}</h1>
               <h2 className="tagline">{beerData.tagline}</h2>
-              <div>
-                <h3 className="abv">ABV: {beerData.abv}</h3>
-                <h3 className="ibu">IBU:     {beerData.ibu}</h3>
+              <div className="textGroupTwo">
                 <p className="desc">{beerData.description}</p>
+                <div className="abvAndIbu">
+                  <h3 className="abv">ABV: {beerData.abv}</h3>
+                  <h3 className="ibu">IBU: {beerData.ibu}</h3>
+                </div>
               </div>
               </div>
             </div>
-            <span>Add To Favorites</span>
-            <FontAwesomeIcon 
-              icon={isLiked ? faHeart : faBeer }
-              className = 'beerIcon'
-              color={isLiked ? '#F44336' : 'rgb(50, 50, 50)'}
-              size='3x'
-              onClick={() => this.iconClick(beerData.id)}
-            ></FontAwesomeIcon>
+            <div className="favs">
+              <span className="favsText">
+                {isLiked ? "De-Favorite" : "Favorite"}
+                </span>
+              <FontAwesomeIcon 
+                icon={isLiked ? faHeart : faBeer }
+                className = 'beerIcon'
+                color={isLiked ? 'rgb(236, 73, 141)' : 'rgb(50, 50, 50)'}
+                size='3x'
+                onClick={() => this.iconClick(beerData.id)}
+              ></FontAwesomeIcon>
+            </div>
           </div>
         </div>
       </div>

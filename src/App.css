@@ -39,10 +39,35 @@ body {
   margin-left: 2rem;
 }
 
+.textGroupTwo {
+  margin-top: 1rem;
+}
+
+.abvAndIbu {
+  display: flex;
+  padding-top: 1rem;
+}
+
+.ibu {
+  margin-left: 1rem;
+}
+
 .title {
   border-bottom: 2px solid black;
 }
 
+.favs {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.favsText {
+  font-size: 1.5em;
+}
+
 .beerIcon {
   font-size: 2.75rem;
+  margin: 1rem;
 }
