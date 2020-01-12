@@ -32,22 +32,24 @@ class BeerCardSingles extends React.Component {
           <div className="card-body">
             <div className="groupOne">
               <img src={beerData.image}  className="beerImage" alt=""/>
-              <div className="textGroupOne">
-                <h1 className="title">{beerData.name}</h1>
-                <h2 className="tagline">{beerData.tagline}</h2>
+             <div          className="textGroupOne">
+              <h1 className="title">{beerData.name}</h1>
+              <h2 className="tagline">{beerData.tagline}</h2>
+              <div>
+                <h3 className="abv">ABV: {beerData.abv}</h3>
+                <h3 className="ibu">IBU:     {beerData.ibu}</h3>
+                <p className="desc">{beerData.description}</p>
+              </div>
               </div>
             </div>
-            <h3 className="abv">{beerData.abv}</h3>
-            <h3 className="ibu">{beerData.ibu}</h3>
-            <p className="desc">{beerData.description}</p>
             <span>Add To Favorites</span>
-           <FontAwesomeIcon 
-            icon={isLiked ? faHeart : faBeer }
-            className = 'beerIcon'
-            color={isLiked ? '#F44336' : 'rgb(50, 50, 50)'}
-            size='3x'
-            onClick={() => this.iconClick(beerData.id)}
-           ></FontAwesomeIcon>
+            <FontAwesomeIcon 
+              icon={isLiked ? faHeart : faBeer }
+              className = 'beerIcon'
+              color={isLiked ? '#F44336' : 'rgb(50, 50, 50)'}
+              size='3x'
+              onClick={() => this.iconClick(beerData.id)}
+            ></FontAwesomeIcon>
           </div>
         </div>
       </div>
