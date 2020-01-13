@@ -11,24 +11,20 @@ class BeerCardSingles extends React.Component {
 
   iconClick(id) {
     this.setState({ isLiked: !this.state.isLiked });
-    // console.log(this.state.isLiked)
+    console.log(this.state.isLiked);
     const { beerData } = this.props;
     // console.log(beerData.id);
 
     if (beerData.id === id && this.state.isLiked === false) {
-      this.setState(prevState => ({
-        favorites: [...prevState.favorites, beerData]
-      }));
+      this.state.favorites.push(beerData);
+      this.setState({ favorites: [...this.state.favorites, beerData] });
     } else if (beerData.id === id && this.state.isLiked === true) {
       console.log("indside else if");
-      this.setState(prevState => ({
-        favorites: [
-          ...prevState.favorites,
-          this.state.favorites.filter((beer, index) =>
-            index + 1 !== id
-          )
-        ]
-      }));
+      this.setState({
+        favorites: this.state.favorites.filter(
+          (beer, index) => index + 1 !== id
+        )
+      });
     }
   }
 
