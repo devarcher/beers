@@ -1,5 +1,5 @@
 import React from "react";
-import Favorites from "./Favorites";
+// import Favorites from "./Favorites";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBeer, faHeart } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,22 +10,25 @@ class BeerCardSingles extends React.Component {
   };
 
   iconClick(id) {
-    this.setState({ isLiked: !this.state.isLiked });
-    console.log(this.state.isLiked);
-    const { beerData } = this.props;
+    // const { beerData } = this.props;
+    const { isLiked } = this.state;
+    // const { favorites } = this.state;
+
+    this.setState({ isLiked: !isLiked });
+    // console.log(this.state.isLiked);
     // console.log(beerData.id);
 
-    if (beerData.id === id && this.state.isLiked === false) {
-      this.state.favorites.push(beerData);
-      this.setState({ favorites: [...this.state.favorites, beerData] });
-    } else if (beerData.id === id && this.state.isLiked === true) {
-      console.log("indside else if");
-      this.setState({
-        favorites: this.state.favorites.filter(
-          (beer, index) => index + 1 !== id
-        )
-      });
-    }
+    // Attempt at adding beers into Favorites Array for dynamically making Favorites div.
+    // if (beerData.id === id && isLiked === false) {
+    //   this.setState({ favorites: [...favorites, beerData] });
+    // } else if (beerData.id === id && isLiked === true) {
+    //   console.log("inside else if");
+    //   this.setState({
+    //     favorites: favorites.filter(
+    //       (beer, index) => index + 1 !== id
+    //     )
+    //   });
+    // }
   }
 
   render() {
@@ -68,7 +71,7 @@ class BeerCardSingles extends React.Component {
           </div>
         </div>
         <div>
-          <Favorites favData={this.state.favorites} beerData={beerData} />
+          {/* <Favorites favorites={this.state.favorites} beerData={beerData} /> */}
         </div>
       </div>
     );
