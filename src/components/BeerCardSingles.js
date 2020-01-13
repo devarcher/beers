@@ -16,16 +16,19 @@ class BeerCardSingles extends React.Component {
     // console.log(beerData.id);
 
     if (beerData.id === id && this.state.isLiked === false) {
-      this.setState({
-        favorites: [...this.state.favorites, beerData]
-      });
+      this.setState(prevState => ({
+        favorites: [...prevState.favorites, beerData]
+      }));
     } else if (beerData.id === id && this.state.isLiked === true) {
       console.log("indside else if");
-      this.setState({
-        favorites: this.state.favorites.filter(
-          (beer, index) => index + 1 !== id
-        )
-      });
+      this.setState(prevState => ({
+        favorites: [
+          ...prevState.favorites,
+          this.state.favorites.filter((beer, index) =>
+            index + 1 !== id
+          )
+        ]
+      }));
     }
   }
 
