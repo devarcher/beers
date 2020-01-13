@@ -9,16 +9,18 @@ class BeerCardSingles extends React.Component {
     favorites: []
   };
 
-  iconClick(id) {
-    // const { beerData } = this.props;
+  // Handles Click event on "Favorite w/ Icon" Toggles Icons / Text / Styling
+  handleClick(id) {
     const { isLiked } = this.state;
+    this.setState({ isLiked: !isLiked });
+
+    // Below was Attempt at adding beers into Favorites Array for dynamically making Favorites div.
+    // const { beerData } = this.props;
     // const { favorites } = this.state;
 
-    this.setState({ isLiked: !isLiked });
     // console.log(this.state.isLiked);
     // console.log(beerData.id);
 
-    // Attempt at adding beers into Favorites Array for dynamically making Favorites div.
     // if (beerData.id === id && isLiked === false) {
     //   this.setState({ favorites: [...favorites, beerData] });
     // } else if (beerData.id === id && isLiked === true) {
@@ -57,9 +59,9 @@ class BeerCardSingles extends React.Component {
             <div className="favs">
               <span
                 className="favsClick"
-                onClick={() => this.iconClick(beerData.id)}
+                onClick={() => this.handleClick(beerData.id)}
               >
-                {isLiked ? "De-Favorite" : "Favorite"}
+                {isLiked ? "Over It" : "Love It"}
                 <FontAwesomeIcon
                   icon={isLiked ? faHeart : faBeer}
                   className="beerIcon"
