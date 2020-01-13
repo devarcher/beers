@@ -1,4 +1,5 @@
 import React from "react";
+import Favorites from "./Favorites";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBeer, faHeart } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,21 +11,22 @@ class BeerCardSingles extends React.Component {
 
   iconClick(id) {
     this.setState({ isLiked: !this.state.isLiked });
+    // console.log(this.state.isLiked)
+    const { beerData } = this.props;
+    // console.log(beerData.id);
 
-    // const { beerData } = this.props;
-    // console.log(beerData);
-    // if(this.state.isLiked === true) {
-    //   this.setState(prevState => ({
-    //     favorites: [...prevState.favorites, beerData]
-    //   }))
-    // }
+    if (beerData.id === id && this.state.isLiked === true) {
+      this.setState({
+        favorites: [...this.state.favorites, beerData]
+      });
+    }
   }
 
   render() {
     const { isLiked } = this.state;
     const { beerData } = this.props;
     // console.log(beerData)
-    // console.log('***Favorites State***', this.state.favorites)
+    console.log("***Favorites State***", this.state.favorites);
     return (
       <div>
         <div className="card">
@@ -42,19 +44,25 @@ class BeerCardSingles extends React.Component {
                   </div>
                 </div>
               </div>
-            </div>  
+            </div>
             <div className="favs">
-              <span className="favsClick" onClick={() => this.iconClick(beerData.id)}>
+              <span
+                className="favsClick"
+                onClick={() => this.iconClick(beerData.id)}
+              >
                 {isLiked ? "De-Favorite" : "Favorite"}
                 <FontAwesomeIcon
-                icon={isLiked ? faHeart : faBeer}
-                className="beerIcon"
-                color={isLiked ? "#f0baba" : "#e4decd"}
-                size="3x"
+                  icon={isLiked ? faHeart : faBeer}
+                  className="beerIcon"
+                  color={isLiked ? "#f0baba" : "#e4decd"}
+                  size="3x"
                 ></FontAwesomeIcon>
               </span>
             </div>
           </div>
+        </div>
+        <div>
+          <Favorites FavData={this.state.favorites} beerData={beerData} />
         </div>
       </div>
     );

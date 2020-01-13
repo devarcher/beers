@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 
 * {
   box-sizing: border-box;
@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background: #acb7ae
+  background: #acb7ae;
 }
 
 .groupOne {
@@ -40,7 +40,7 @@ body {
 
 .textGroupOne {
   margin-left: 2rem;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .textGroupTwo {
@@ -71,7 +71,7 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .beerIcon {
@@ -80,7 +80,6 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
-
   body {
     padding: 0;
   }
@@ -100,8 +99,6 @@ body {
     padding: 1rem;
     width: 90vw;
   }
-
-
 
   .beerImage {
     height: 10rem;
